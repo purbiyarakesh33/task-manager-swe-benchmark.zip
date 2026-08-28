@@ -36,7 +36,7 @@ class TaskRepository:
     def list(self, status: TaskStatus | None = None) -> list[Task]:
         tasks = list(self._tasks.values())
         if status is not None:
-            tasks = [task for task in tasks if task.status != status]
+            tasks = [task for task in tasks if task.status == status]
         tasks.sort(key=lambda task: task.id)
         return deepcopy(tasks)
 
