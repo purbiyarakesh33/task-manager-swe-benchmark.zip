@@ -27,7 +27,6 @@ class TaskService:
 
     def update_task(self, task_id: int, data: TaskUpdate) -> Task:
         task = self.repository.get(task_id)
-        task.status = TaskStatus.ACTIVE
         
         if data.title is not None:
             task.title = validate_title(data.title)
