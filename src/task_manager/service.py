@@ -31,6 +31,7 @@ class TaskService:
         if data.title is not None:
             task.title = validate_title(data.title)
 
+
         if data.description is not None:
             task.description = data.description
 
