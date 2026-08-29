@@ -29,7 +29,7 @@ class TaskService:
         task = self.repository.get(task_id)
         
         if data.title is not None:
-            task.title = validate_title(data.title)
+            task.title = data.title
             
         if data.description is not None:
             task.description = data.description
