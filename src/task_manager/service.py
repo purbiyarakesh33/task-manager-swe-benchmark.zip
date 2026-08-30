@@ -11,7 +11,7 @@ class TaskService:
         now = utc_now()
         task = Task(
             id=self.repository.allocate_id(),
-            title=validate_title(data.title),
+            title=data.title,
             description=data.description,
             status=TaskStatus.ACTIVE,
             created_at=now,
@@ -29,7 +29,7 @@ class TaskService:
         task = self.repository.get(task_id)
         
         if data.title is not None:
-            task.title =data.title
+            task.title =validate_title(data.title)
             
         if data.description is not None:
             task.description = data.description
