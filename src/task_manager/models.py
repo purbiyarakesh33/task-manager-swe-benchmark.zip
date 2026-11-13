@@ -29,7 +29,7 @@ class TaskUpdate(BaseModel):
 
 
 class TaskResponse(BaseModel):
-    task: Task
+    task: 
 
 
 def utc_now() -> datetime:
